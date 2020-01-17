@@ -16,16 +16,15 @@ include("footer.php");
      </head>
     <body>
         <div id="Content" style="Height: 60%;">
-            <table class=" border border-dark">
-                <tr>
-                    <th>
+            <table class=" border border-dark m-auto" style="width:100%" >
+                <tr class="border border-dark">
+                    <th class="border border-dark">
                      Aantal
                     </th>
-                    <th>
+                    <th class="border border-dark">
                      Item
                     </th>
                 </tr>
-                        <a href="saerghsh" class="button button second"> hoi</a>
                 <?php
 
                 $_POSTS[0] = 1;
@@ -37,12 +36,12 @@ include("footer.php");
 
                 for ($i = 0; $i < $arr; $i++) {
                          echo '</th>';
-                         echo '<th>';
+                         echo '<th class="border border-dark">';
                    print $_POSTS[$i];
                          echo '</th>';
-                         echo '<th>';
+                         echo '<th class="border border-dark">';
                    print $_POSTS[$i];
-                         echo '</th>';
+                         echo '</th class="border border-dark">';
                          echo '</tr>';
                 }
                 ?>
