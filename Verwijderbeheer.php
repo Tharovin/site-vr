@@ -22,7 +22,7 @@ include("footer.php");
     <div id="Content" style="Height: 60%;">
 <?php
 
-    echo '<table border="1" width="700" height="200">
+    echo '<table border="1" width="100%" height="80%">
     <tr>
         <th>Artikel</th>
         <th>aantal</th>
