@@ -1,5 +1,6 @@
 <?php
 include("connect.php");
+include("header.php");
 include("footer.php");
 ?>
 <!doctype html>
@@ -18,32 +19,33 @@ include("footer.php");
 
 </head>
 <body>
+    <div id="Content" style="Height: 60%;">
 <?php
-      
+
     echo '<table border="1" width="700" height="200">
-    <tr> 
+    <tr>
         <th>Artikel</th>
         <th>aantal</th>
         <th>Verwijderen</th>
     </tr>
         ';
 	$sql ="SELECT * FROM artikel";
-	$result = $connection->query($sql);    
-	
+	$result = $connection->query($sql);
+
 	if ($result->num_rows>0){
-		
+
 		while ($row = $result->fetch_assoc()) {
 			echo "
-        	 <tr> 
+        	 <tr>
         		<td>".$row['productnaam']. "</td>
                 <td>".$row['aantal']."</td>
                 <td><a href=\"Verwijderbeheer.php?artikelnummer=" . $row['Artikelnummer'] . "\">verwijderen</a></td>
             </tr>
-                
-            ";                  
+
+            ";
         }
     }
-          echo '</table>'; 
+          echo '</table>';
 ?>
       <?php
 
@@ -52,6 +54,6 @@ include("footer.php");
 	       $result = $connection->query($sql);
 
         ?>
-
+    </div>
 </body>
 </html>

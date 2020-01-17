@@ -1,5 +1,6 @@
 <?php
 include("connect.php");
+include("header.php");
 include("footer.php");
 
 ?>
@@ -7,11 +8,7 @@ include("footer.php");
 <html lang="nl">
 
 <head>
-    <style>
-        body {
-
-        }
-    </style>
+<div id="Content" style="Height: 60%;">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>beheerformulier</title>
@@ -21,49 +18,50 @@ include("footer.php");
 <body>
 
 <form action="beheerformulier.php" method="post">
-<table class="center">
-    <tr>
-        <div class="container">
-    <th>beheer</th>
-    <th>invoer</th>    
-        </div>
-    </tr>
-    <tr>
-    <td><b>Aantal</b></td>
-    <td><input type="number" name="aantal"></td>
-    </tr>
-    <tr>
-    <td>productnaam</td>
-    <td><input type="text" name="productnaam"></td>
-    </tr>
-    <tr>
-    <td><input type="submit" name="submit" value="Klik om toe te voegen"></td>
-    <td> </td>
-    </tr>
-</table>   
-</form>
-<?php
-        if(isset($_POST["submit"]))
-        {
-           $huts = ('gepost');
-           echo $huts;
-            echo "<br>";
-            
-          $sql = "INSERT INTO artikel (aantal, productnaam)
-                    VALUES ('" . $_POST['aantal'] . "', '" . $_POST['productnaam'] . "')";
-            if ($connection->query($sql) === TRUE)
-             {
-             }
-                elseif ($connection->query($sql) === false)
-                {
-                    $huts = ('nope');
-                }
-            else
-            {
-                $huts = ('nope');
-            }
-        }
-?>
 
+    <table class="center">
+        <tr>
+            <div class="container">
+        <th>beheer</th>
+        <th>invoer</th>
+            </div>
+        </tr>
+        <tr>
+        <td><b>Aantal</b></td>
+        <td><input type="number" name="aantal"></td>
+        </tr>
+        <tr>
+        <td>productnaam</td>
+        <td><input type="text" name="productnaam"></td>
+        </tr>
+        <tr>
+        <td><input type="submit" name="submit" value="Klik om toe te voegen"></td>
+        <td> </td>
+        </tr>
+    </table>
+        </form>
+        <?php
+                if(isset($_POST["submit"]))
+                {
+                   $huts = ('gepost');
+                   echo $huts;
+                    echo "<br>";
+
+                  $sql = "INSERT INTO artikel (aantal, productnaam)
+                            VALUES ('" . $_POST['aantal'] . "', '" . $_POST['productnaam'] . "')";
+                    if ($connection->query($sql) === TRUE)
+                     {
+                     }
+                        elseif ($connection->query($sql) === false)
+                        {
+                            $huts = ('nope');
+                        }
+                    else
+                    {
+                        $huts = ('nope');
+                    }
+                }
+        ?>
+</div>
 </body>
 </html>
